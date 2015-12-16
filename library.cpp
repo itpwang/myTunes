@@ -43,7 +43,7 @@ string library::getDirectory()
     return libraryPath;
 }
 
-void library::addMusic()
+void library::addMusic() //opens file and saves path to null
 {
     QFileDialog d;
     QString fileName = d.getOpenFileName(this,

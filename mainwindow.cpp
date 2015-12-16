@@ -119,6 +119,8 @@ void MainWindow::pauseMusic()
 void MainWindow::stopMusic()
 {
     controls->stop();
+    offsetValue=0;
+    updateStatusBar();
 }
 
 void MainWindow::playMusic()

@@ -62,7 +62,7 @@ public:
         addMusic->setGeometry(QRect(1090, 630, 121, 23));
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QStringLiteral("tabWidget"));
-        tabWidget->setGeometry(QRect(50, 140, 1181, 481));
+        tabWidget->setGeometry(QRect(50, 140, 921, 481));
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         tableWidget = new library(tab);
@@ -89,11 +89,11 @@ public:
         tabWidget->addTab(tab_2, QString());
         progressSlider = new QSlider(centralWidget);
         progressSlider->setObjectName(QStringLiteral("progressSlider"));
-        progressSlider->setGeometry(QRect(40, 0, 1181, 41));
+        progressSlider->setGeometry(QRect(40, 20, 931, 41));
         progressSlider->setOrientation(Qt::Horizontal);
         horizontalLayoutWidget = new QWidget(centralWidget);
         horizontalLayoutWidget->setObjectName(QStringLiteral("horizontalLayoutWidget"));
-        horizontalLayoutWidget->setGeometry(QRect(40, 50, 931, 80));
+        horizontalLayoutWidget->setGeometry(QRect(40, 60, 931, 80));
         horizontalLayout = new QHBoxLayout(horizontalLayoutWidget);
         horizontalLayout->setSpacing(6);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
