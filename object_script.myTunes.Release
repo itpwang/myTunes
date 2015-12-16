@@ -1,0 +1,12 @@
+INPUT(
+./release\main.o
+./release\library.o
+./release\mainwindow.o
+./release\musicEngine.o
+./release\myplayer.o
+./release\playlist.o
+./release\time.o
+./release\moc_library.o
+./release\moc_mainwindow.o
+./release\moc_myplayer.o
+);

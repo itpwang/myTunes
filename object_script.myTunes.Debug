@@ -1,0 +1,12 @@
+INPUT(
+./debug\main.o
+./debug\library.o
+./debug\mainwindow.o
+./debug\musicEngine.o
+./debug\myplayer.o
+./debug\playlist.o
+./debug\time.o
+./debug\moc_library.o
+./debug\moc_mainwindow.o
+./debug\moc_myplayer.o
+);
