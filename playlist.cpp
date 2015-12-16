@@ -1,7 +1,6 @@
 #include "playlist.h"
 #include <stdlib>     /* srand, rand */
 #include <ctime>       /* time */
-
 playlist::playlist()
 {
 
@@ -28,7 +27,12 @@ playlist:: shuffle(bool yes)
 
 playlist:: loop(bool yes)
 {
-
+    int counter=0;
+    while(counter<vector.size && yes== true)
+    playsong(vector[counter]);
+    counter++
+    if(counter == vector_size)
+    counter=0;
 }
 
 playlist:: random(bool yes)
