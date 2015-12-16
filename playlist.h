@@ -33,7 +33,10 @@ public:
     void loop(bool yes);
     void random(bool yes);
   private:
-    vector<string> songs;
+    vector<string>song;
+    vector<string>artist_name;
+    vector<string>album;
+    vector<string>genre;
 };
 
 #endif // PLAYLIST_H
