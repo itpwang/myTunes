@@ -5,7 +5,7 @@ Time::Time()
     rawTime=0;
 }
 
-Time::Time(qint64 time)
+Time::Time(long long int time)
 {
     rawTime=time;
 }
@@ -18,15 +18,19 @@ Time::~Time()
 
 float Time::asSeconds()
 {
-    return (rawTime/1000.0);
+    long long int temp = rawTime;
+    qDebug("pretval: %d", rawTime);
+    float returnvalue =  temp/1000.0;
+    qDebug("retval: %d", returnvalue);
+    return returnvalue;
 }
 
-void Time::savetime(qint64 time)
+void Time::savetime(long long time)
 {
     rawTime=time;
 }
 
-qint64 Time::getrawTime()
+long long Time::getrawTime()
 {
     return rawTime;
 }

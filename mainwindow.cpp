@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->stopButton, SIGNAL(clicked()), this, SLOT(stopMusic()));
     connect(ui->progressSlider,SIGNAL(sliderPressed()),this,SLOT(sliderPause()));
     connect(ui->progressSlider,SIGNAL(sliderReleased()),this,SLOT(sliderRelease()));
+    connect(controls,SIGNAL(positionChanged(qint64)), this, SLOT(updateStatusBar()));
     musicWasPlaying=false;
 }
 
@@ -53,12 +54,13 @@ void MainWindow::sliderPause()
 
 void MainWindow::sliderRelease()
 {
+    qDebug("offset: %d", ui->progressSlider->value());
+    offsetValue = ((ui->progressSlider->value())*(int)(controls->getDuration().getrawTime()))/100;
+    qDebug("offsetval: %d", offsetValue);
+    controls->setPlayingOffset(offsetValue);
 
-
-    offsetValue = ui->progressSlider->value()/100.0*controls->getDuration().asSeconds();
-
-    if(!musicWasPlaying)
-        controls->stop();
+    if(!musicWasPlaying)  controls->pause();
+    else controls->play();
 }
 
 
@@ -66,10 +68,11 @@ void MainWindow::updateStatusBar()
 {
     try
     {
-        qDebug("updating status bar");
         if(controls->getStatus() == QMediaPlayer::PlayingState)
         {
-            int percentage = 100*controls->getPlayingOffset().asSeconds()/controls->getDuration().asSeconds();
+            qint64 duration = controls->getDuration().getrawTime();
+            qint64 offset = controls->getPlayingOffset().getrawTime();
+            int percentage = (100*offset)/duration;
             if(percentage == 100)
             {
                 ui->progressSlider->setValue(0);

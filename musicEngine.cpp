@@ -27,7 +27,7 @@ void musicEngine::play()
 Time  musicEngine::getDuration()
 {
     safe();
-    updateTime();
+    rawTime = duration();
     return rawTime;
 }
 

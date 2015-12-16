@@ -6,14 +6,14 @@ class Time
 {
     public:
         Time();
-        Time(qint64 time);
+        Time(long long time);
         ~Time();
         float asSeconds();//converts qint64 to float
-        void savetime(qint64 time);
-        qint64 getrawTime();
+        void savetime(long long int time);
+        long long int getrawTime();
 
     private:
-        qint64 rawTime;
+        long long int rawTime;
 
 
 };
